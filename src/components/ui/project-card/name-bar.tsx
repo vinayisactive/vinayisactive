@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import { ProjectInterface } from "@/Interfaces/Interface";
+import { ProjectInterface } from "@/interfaces/Interface";
 
 const NameBar: FC<Pick<ProjectInterface, "name" | "logoUrl">> = ({name,logoUrl}) => {
   return (

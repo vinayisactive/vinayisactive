@@ -15,7 +15,6 @@ export interface ProjectInterface {
     details : string[],
 }
 
-
 export interface SocialsInterface {
     name: string;
     id: string;
@@ -24,5 +23,5 @@ export interface SocialsInterface {
 
 export interface BlogInterface {
     title: string;
-    url: string | undefined; 
+    url?: string | undefined; 
 }

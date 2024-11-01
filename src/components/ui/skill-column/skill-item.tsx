@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { SkillInterface } from "@/Interfaces/Interface";
+import { SkillInterface } from "@/interfaces/Interface";
 
 const SkillItem: FC<Pick<SkillInterface, 'technologies'>> = ({ technologies }) => {
   return (

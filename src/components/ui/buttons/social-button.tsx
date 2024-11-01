@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import LinkButton from "./link-button";
-import { SocialsInterface as SocialButtonProps } from "@/Interfaces/Interface";
+import { SocialsInterface as SocialButtonProps } from "@/interfaces/Interface";
 
 const SocialButton: FC<SocialButtonProps> = ({ name, id, url }) => {
   return (

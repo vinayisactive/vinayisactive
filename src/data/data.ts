@@ -1,4 +1,4 @@
-import {ProjectInterface, SocialsInterface, BlogInterface as blog, SkillInterface as Skills } from "@/Interfaces/Interface"
+import {ProjectInterface, SocialsInterface, BlogInterface as blog, SkillInterface as Skills } from "@/interfaces/Interface"
 
 export const resume = {
     url : "",

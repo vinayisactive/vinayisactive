@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import NameBar from "./name-bar";
 import LinkButton from "../buttons/link-button";
-import { Projectlink as ProjectLinkProps } from "@/Interfaces/Interface";
-import { ProjectInterface } from "@/Interfaces/Interface";
+import { Projectlink as ProjectLinkProps } from "@/interfaces/Interface";
+import { ProjectInterface } from "@/interfaces/Interface";
 
 
 const TitleAndLink: FC<Pick<ProjectInterface, 'name' | 'logoUrl' | 'links'>> = ({name, logoUrl, links}) => {

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import DetailListItem from "./detail-list-item";
 import TitleAndLink from "./title-and-links";
-import { ProjectInterface as ProjectCardProps } from "@/Interfaces/Interface";
+import { ProjectInterface as ProjectCardProps } from "@/interfaces/Interface";
 
 const ProjectCard: FC<ProjectCardProps> = ({name, logoUrl, links, details}) => {
   return (

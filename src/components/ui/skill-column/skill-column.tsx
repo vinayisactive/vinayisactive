@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import SkillItem from "./skill-item";
-import { SkillInterface as SkillColumnProps } from "@/Interfaces/Interface";
+import { SkillInterface as SkillColumnProps } from "@/interfaces/Interface";
 
 const SkillColumn: FC<SkillColumnProps> = ({ column, technologies }) => {
   return (

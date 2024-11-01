@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { skills } from "@/data/data";
-import { SkillInterface as Skill } from "@/Interfaces/Interface";
+import { SkillInterface as Skill } from "@/interfaces/Interface";
 import SkillColumn from "@/components/ui/skill-column/skill-column";
 import SectionHeader from "../ui/section-header";
 
