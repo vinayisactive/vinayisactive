@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { blogs } from "@/data/data";
+import { BlogInterface } from "@/Interfaces/Interface";
 import LinkButton from "../ui/buttons/link-button";
 import SectionHeader from "../ui/section-header";
 
@@ -12,7 +13,7 @@ const BlogSection: FC = () => {
       />
 
       <div className="flex flex-col gap-3">
-        {blogs?.map((blog, index: number) => {
+        {blogs?.map((blog: BlogInterface, index: number) => {
           return (
             <div key={index} className="flex gap-2 items-center text-sm md:text-md">
               <span className="h-5 w-5 flex justify-center items-center rounded-md text-black text-sm bg-white/50">{index+1}</span>
