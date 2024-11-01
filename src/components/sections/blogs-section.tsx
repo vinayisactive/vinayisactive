@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { BlogInterface as blog } from "@/Interfaces/Interface";
+import { BlogInterface as blog } from "../../Interfaces/Interface";
 import { blogs } from "@/data/data";
 import LinkButton from "../ui/buttons/link-button";
 import SectionHeader from "../ui/section-header";
