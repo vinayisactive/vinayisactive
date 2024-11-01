@@ -3,14 +3,14 @@ import React, { FC } from "react";
 import { MdArrowOutward } from "react-icons/md";
 
 interface LinkButtonProps {
-  href: string;
+  href?: string;
   text: string;
   className?: string;
   target?: "_blank" | "_self";
   icon?: boolean;
 }
 
-const LinkButton: FC<LinkButtonProps> = ({ href,  text, className = "", target = "_blank", icon = "true"}) => {
+const LinkButton: FC<LinkButtonProps> = ({ href= "#",  text, className = "", target = "_blank", icon = "true"}) => {
   return (
     <Link
       href={href}
