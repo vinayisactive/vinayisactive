@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import pfp from '../../../public/pfp/pfp.jpg'
+import pfp from '../../../public/pfp.jpg'
 import ResumeButton from "@/components/ui/buttons/resume-button";
 
 const IntroductionSection: FC = () => {
