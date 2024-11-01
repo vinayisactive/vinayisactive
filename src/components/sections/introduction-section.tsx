@@ -21,7 +21,7 @@ const IntroductionSection: FC = () => {
           Hey, I am Vinay • 20 🌱
         </h1>
 
-        <p className="text-gray-500 font-semibold mb-2 text-sm md:text-lg lg:text-xl">
+        <p className="text-black/80 mb-2 text-sm md:text-lg lg:text-xl">
           A full stack web engineer, skilled in building typesafe and optimized backends,
           sleek reusable components and frontends. With a focus on clean design and
           enhanced user experiences.

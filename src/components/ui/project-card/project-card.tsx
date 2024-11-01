@@ -8,7 +8,7 @@ const ProjectCard: FC<ProjectCardProps> = ({name, logoUrl, links, details}) => {
       <div className="w-full flex flex-col items-start gap-2">
         <TitleAndLink name={name} logoUrl={logoUrl} links={links} />
 
-        <ul className="">
+        <ul className="list-disc pl-4">
           {details?.map((detail, index) => {
             return <DetailListItem key={index} detail={detail} />;
           })}

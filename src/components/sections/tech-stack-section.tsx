@@ -9,7 +9,7 @@ const TechStackSection: FC = () => {
     <main className="w-full">
       <SectionHeader
         heading="The tech stack 🛠️"
-        subHeading="Building seamless experiences with these cool tools and technologies."
+        subHeading="Building seamless web apps with these cool technologies."
       />
 
       <div className="p-4 flex justify-between gap-6 lg:gap-2 overflow-x-scroll scrollbar lg:overflow-hidden bg-black/5 rounded-md">

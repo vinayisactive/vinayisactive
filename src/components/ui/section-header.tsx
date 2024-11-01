@@ -15,7 +15,7 @@ const SectionHeader: FC<SectionHeaderProps> = ({ heading, subHeading, className,
         {heading}
       </h2>
       {subHeading && (
-        <p className={`text-sm text-gray-500 font-semibold ${subHeadingClassName}`}>
+        <p className={`text-sm text-gray-500 ${subHeadingClassName}`}>
           {subHeading}
         </p>
       )}
