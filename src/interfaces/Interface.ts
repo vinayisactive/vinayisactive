@@ -24,5 +24,5 @@ export interface SocialsInterface {
 
 export interface BlogInterface {
     title: string;
-    url: string; 
+    url: string | undefined; 
 }
