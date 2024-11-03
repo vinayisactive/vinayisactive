@@ -17,8 +17,8 @@ export interface ProjectInterface {
 
 export interface SocialsInterface {
     name: string;
-    id: string;
-    url: string;
+    id?: string;
+    url?: string;
 }
 
 export interface BlogInterface {
