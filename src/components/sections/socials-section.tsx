@@ -7,7 +7,7 @@ const SocialLinkSection: FC = () => {
   return (
     <div className="w-full ">
       <SectionHeader 
-      heading="Contact and Links 🔗"
+      heading="contact"
       />
 
       <div className="flex flex-col lg:flex-row lg:flex-wrap md:gap-2 justify-between ">

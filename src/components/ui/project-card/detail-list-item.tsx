@@ -6,7 +6,7 @@ interface ProjectDetailListItemProps {
 
 const DetailListItem: FC<ProjectDetailListItemProps> = ({detail}) => {
   return (
-    <li className="text-[13px] mt-2 text-black">
+    <li className="text-[13px] mt-2 text-gray-500">
         {detail}
     </li>
   )

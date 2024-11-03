@@ -6,7 +6,7 @@ const SkillColumn: FC<SkillColumnProps> = ({ column, technologies }) => {
   return (
     <div className="flex flex-col justify-start items-center gap-2 text-black">
       <p className="px-2 py-1.5 font-semibold whitespace-nowrap">
-        {column}
+        {column.toLocaleLowerCase()}
       </p>
 
       <SkillItem technologies={technologies} />

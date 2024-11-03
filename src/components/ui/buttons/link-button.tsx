@@ -4,7 +4,7 @@ import { MdArrowOutward } from "react-icons/md";
 
 interface LinkButtonProps {
   href?: string;
-  text: string;
+  text: string | undefined;
   className?: string;
   target?: "_blank" | "_self";
   icon?: boolean;
@@ -14,7 +14,7 @@ const LinkButton: FC<LinkButtonProps> = ({ href= "#",  text, className = "", tar
   return (
     <Link
       href={href}
-      className={`flex items-center ${className}`}
+      className={`flex items-center text-gray-600 ${className}`}
       passHref
       target={target}
     >

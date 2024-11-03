@@ -4,14 +4,18 @@ import { SocialsInterface as SocialButtonProps } from "@/interfaces/Interface";
 
 const SocialButton: FC<SocialButtonProps> = ({ name, id, url }) => {
   return (
-    <div className="flex items-center gap-1 text-sm rounded-lg group">
-      <div className="py-2 border-darkSlateGray text-black font-bold ">
-        {name}
-        <span className="text-black pl-1">/</span>
-      </div>
+    <div className="flex items-center text-sm rounded-lg group">
+      <LinkButton
+        text={name}
+        href={url}
+        icon={false}
+        className="py-2 font-bold "
+      />
+
+      <span className="text-gray-600 pr-1 font-bold">/</span>
 
       <LinkButton
-        className="text-gray-800 hover:underline hover:underline-offset-4 group-hover:underline"
+        className="text-gray-500 hover:underline hover:underline-offset-4 group-hover:underline group-hover:underline-offset-4"
         text={id}
         href={url}
         icon={true}

@@ -8,11 +8,11 @@ const TechStackSection: FC = () => {
   return (
     <main className="w-full">
       <SectionHeader
-        heading="The tech stack 🛠️"
-        subHeading="Building seamless web apps with these cool technologies."
+        heading="stack"
+        subHeading="building cool web apps with these cool techs."
       />
 
-      <div className="p-4 flex justify-between gap-6 lg:gap-2 overflow-x-scroll scrollbar lg:overflow-hidden bg-black/5 rounded-md">
+      <div className="p-4 flex justify-between gap-6 overflow-x-scroll scrollbar bg-black/5 rounded-md">
         {skills?.map((skill: Skill, index: number) => {
           return (
             <SkillColumn

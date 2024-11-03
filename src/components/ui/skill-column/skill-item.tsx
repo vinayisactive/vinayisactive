@@ -6,9 +6,9 @@ const SkillItem: FC<Pick<SkillInterface, 'technologies'>> = ({ technologies }) =
     <ul className="flex flex-col gap-1">
       { technologies?.map((tech : string) => {
         return (
-          <li key={tech} className="text-[12.9px] text-black">
+          <li key={tech} className="text-[12.9px] text-black/70">
             <span className="text-black mr-1">-</span> 
-            {tech}
+            {tech.toLocaleLowerCase()}
           </li>
         )
       })}

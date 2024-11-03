@@ -7,7 +7,7 @@ const ProjectDescriptionSection: FC = () => {
   return (
     <main className="w-full">
       <SectionHeader
-        heading="Project details"
+        heading="projects"
         className=" border-darkSlateGray pb-4"
       />
 
