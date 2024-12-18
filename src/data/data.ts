@@ -56,38 +56,6 @@ export const skills: Skills[] = [
 
 export const projects: ProjectInterface[] = [
   {
-    name: "waveformslab",
-    logoUrl:
-      "https://utfs.io/f/JffARKaQ1mkdqr302boKPjEfND9bJVwFAzQcG8hn6HWYtkBX",
-    links: [
-      {
-        name: "Github",
-        url: "",
-      },
-      {
-        name: "Live",
-        url: "",
-      },
-    ],
-    details: ["Coming Soon..."],
-  },
-  {
-    name: "Aestheticifier",
-    logoUrl:
-      "https://utfs.io/f/JffARKaQ1mkdm54zUJhF5K13irj97HAMRfDG4uCBsqXvOwyS",
-    links: [
-      {
-        name: "Github",
-        url: "",
-      },
-      {
-        name: "Live",
-        url: "",
-      },
-    ],
-    details: ["Coming Soon..."],
-  },
-  {
     name: "useCustomHookSpace",
     logoUrl:
       "https://utfs.io/f/JffARKaQ1mkdU8OgS8XLrbCPFv5xKQDj4NsJwltGcqW8y03f",
@@ -108,6 +76,22 @@ export const projects: ProjectInterface[] = [
       "offers custom hooks like useInfiniteScroll, useThrottle, usePrevious, useResponsive, useDebounce, useCurrentLocation, useRealTimeLocation, and useInternetConnection.",
       "includes additional hooks like useScript, useIdle, useOnScreen, useDataAPI, useLocalStorage, useHasFocus and more.",
     ],
+  },
+  {
+    name: "waveformslab",
+    logoUrl:
+      "https://utfs.io/f/JffARKaQ1mkdqr302boKPjEfND9bJVwFAzQcG8hn6HWYtkBX",
+    links: [
+      {
+        name: "Github",
+        url: "",
+      },
+      {
+        name: "Live",
+        url: "",
+      },
+    ],
+    details: ["Coming Soon..."],
   },
 ];
 
@@ -136,7 +120,7 @@ export const socials: SocialsInterface[] = [
 
 export const blogs: blog[] = [
   {
-    title: "Mounting and Unmounting in the context of 🔨hook",
+    title: "Mounting and Unmounting in the context of hook",
     url: "https://medium.com/@vinayisactive/mounting-and-unmounting-in-the-context-of-hook-04253869656d",
   },
   {

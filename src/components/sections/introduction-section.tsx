@@ -17,7 +17,7 @@ const IntroductionSection: FC = () => {
 
       <div className="text-black flex flex-col justify-between lg:gap-1 gap-2">
         <h1 className=" text-lg sm:text-2xl md:text-4xl font-bold mb-3">
-          hey, i am vinay • 20 🌱
+          hey, i am vinay • 21 
         </h1>
 
         <p className="text-gray-500 mb-2 text-sm">

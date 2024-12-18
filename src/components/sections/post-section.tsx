@@ -4,11 +4,11 @@ import { blogs } from "@/data/data";
 import LinkButton from "../ui/buttons/link-button";
 import SectionHeader from "../ui/section-header";
 
-const BlogSection: FC = () => {
+const PostSection: FC = () => {
   return (
     <div className="w-full flex flex-col justify-start items-start gap-2">
       <SectionHeader
-        heading="/blogs"
+        heading=""
       />
 
       <ul className="flex flex-col gap-3">
@@ -31,4 +31,4 @@ const BlogSection: FC = () => {
   );
 };
 
-export default BlogSection;
+export default PostSection;

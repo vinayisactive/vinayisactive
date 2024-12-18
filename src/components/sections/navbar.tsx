@@ -14,8 +14,8 @@ const Navbar: FC = () => {
            icon={false} />
 
         <LinkButton
-          href="/blogs"
-          text="/blogs"
+          href="/post"
+          text="/posts"
           target="_self"
           icon={false}
         />

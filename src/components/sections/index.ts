@@ -4,7 +4,7 @@ import TechStackSection from "./tech-stack-section";
 import CraftPromotionSection from "./craft-promotion-section";
 import ProjectDescriptionSection from "./project-description-section";
 import SocialLinkSection from "./socials-section";
-import BlogSection from "./blogs-section";
+import BlogSection from "./post-section";
 
 
 export {
