@@ -33,50 +33,7 @@ function Article() {
       </ArticleDescription>
 
       <ArticleSectionWithHeading
-        className="mt-20"
-        heading="Wide view of article"
-      >
-        <div className="mt-5 text-base flex flex-col justify-start items-start gap-3 md:gap-1">
-          <Link
-            href="#backend_process"
-            className="hover:underline underline-offset-2"
-          >
-            ㆍLet&apos;s first talk about how a query even reaches the backend
-            process?
-          </Link>
-
-          <Link
-            href="#transaction_determination"
-            className="hover:underline underline-offset-2"
-          >
-            ㆍInside the backend process: parsing and transaction determination
-          </Link>
-
-          <Link
-            href="#transaction_encapsulated_processes"
-            className="hover:underline underline-offset-2"
-          >
-            ㆍOperations and steps encapsulated within the transaction context
-          </Link>
-
-          <Link
-            href="#returning_the_control"
-            className="hover:underline underline-offset-2"
-          >
-            ㆍExecutor returning back the control to Transaction Manager
-          </Link>
-
-          <Link
-            href="#summary"
-            className="hover:underline underline-offset-2"
-          >
-            ㆍSummary
-          </Link>
-        </div>
-      </ArticleSectionWithHeading>
-
-      <ArticleSectionWithHeading
-        className="mt-20"
+        className="mt-24"
         heading="Let's first talk about how a query even reaches the backend process ?"
         id="backend_process"
       >
@@ -335,11 +292,10 @@ function Article() {
         </div>
       </ArticleSectionWithHeading>
 
-
       
       <ArticleSectionWithHeading
         className="mt-24 pb-52"
-        heading="Summary!"
+        heading="Summary"
         id="summary"
       >
         <div className="mt-7 text-base">
