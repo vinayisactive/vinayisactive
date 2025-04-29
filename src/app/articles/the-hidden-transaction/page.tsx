@@ -5,7 +5,6 @@ import {
   ArticleWrapper,
 } from "@/components/article-comps";
 import Image from "next/image";
-import Link from "next/link";
 import client_backend_process_diagram from "../../../../public/client-backend-process.svg";
 import transaction_det from "../../../../public/transaction-det.svg";
 import inside_transaction from "../../../../public/inside-transaction.svg";
@@ -295,7 +294,7 @@ function Article() {
       
       <ArticleSectionWithHeading
         className="mt-24 pb-52"
-        heading="Summary"
+        heading="Summary time"
         id="summary"
       >
         <div className="mt-7 text-base">
