@@ -23,35 +23,20 @@ function Article() {
       <ArticleDescription className="mt-10">
         <p className="text-base">
           <span className="font-semibold pr-1">
-            Even if your query isn’t a transaction, it is a transaction, bahaha,
+            Even if your query isn’t a transaction, it is a transaction, bahaha.
           </span>
-          Hey, I’m Vinay and recently I was diving into PostgreSQL architecture
-          because
-          <Link
-            href="https://x.com/arpit_bhayani"
-            className="underline underline-offset-2 px-1"
-          >
-            Arpit Bhayani’s
-          </Link>
-          content totally spiked up my curiosity to read more about databases.
+          Hey, I’m Vinay, and recently i was reading about how PostgreSql handles queries internally, and was genuinely curious to understand.
           <br />
           <br />
-          I use PostgreSQL in all my projects anyway, so I thought, why not
-          understand it a little deeper? While reading, I stumbled across a
-          behavior most people don’t even realize exists, and thought of writing
-          this article.
-          <br />
-          <br />
-          Go through the article and make yourself aware — hopefully you’ll end
-          up loving PostgreSQL even more after this!
+          I use PostgreSql all the time in my projects anyway, so it just made sense to deep dive in internal working of Postgresql. While going through it, i found a behavior most people don&apos;t even realise exists, and figured i should write about it.
         </p>
       </ArticleDescription>
 
       <ArticleSectionWithHeading
-        className="mt-24"
+        className="mt-20"
         heading="Wide view of article"
       >
-        <div className="mt-5 text-base flex flex-col justify-start items-start gap-4">
+        <div className="mt-5 text-base flex flex-col justify-start items-start gap-3 md:gap-1">
           <Link
             href="#backend_process"
             className="hover:underline underline-offset-2"
@@ -80,11 +65,18 @@ function Article() {
           >
             ㆍExecutor returning back the control to Transaction Manager
           </Link>
+
+          <Link
+            href="#summary"
+            className="hover:underline underline-offset-2"
+          >
+            ㆍSummary
+          </Link>
         </div>
       </ArticleSectionWithHeading>
 
       <ArticleSectionWithHeading
-        className="mt-24"
+        className="mt-20"
         heading="Let's first talk about how a query even reaches the backend process ?"
         id="backend_process"
       >
@@ -108,9 +100,9 @@ function Article() {
 
           <p className="mt-4">
             this child
-            <span className="font-semibold">
+            <span className="font-semibold mx-1">
               &quot;backend process&quot;
-            </span>{" "}
+            </span>
             manages all the interactions with client from parsing of the query
             to the exectuion.
           </p>
@@ -133,50 +125,49 @@ function Article() {
 
           <p>
             Once the backend process receives the query, it first invokes the
-            <span className="font-semibold">RAW PARSER</span> (built with FLEX
+            <span className="font-semibold mx-1">RAW PARSER</span> (built with FLEX
             and BISON) to check SQL syntax and produce the initial
-            <span className="font-semibold">&quot;Parse Tree&quot;</span>
+            <span className="font-semibold mx-1">&quot;Parse Tree&quot;</span>
           </p>
 
           <p className="mt-4">
-            <span className="font-semibold">Note: </span>
-            FLEX and BISON transform
-            <span className="px-2 bg-gray-200 rounded-sm">scan.l</span> and
-            <span className="px-2 bg-gray-200 rounded-sm">gram.y</span> files to
+            Note: FLEX and BISON transform
+            <span className="px-2 bg-gray-200 rounded-sm mx-1">scan.l</span> and
+            <span className="px-2 bg-gray-200 rounded-sm mx-1">gram.y</span> files to
             C file, these auto-generated C files implement the lexar grammer.
           </p>
 
-          <p className="mt-8">
-            By the first node of the
-            <span className="font-semibold">Parse tree</span>, Postgresql
-            figures out wheather the query is a
-            <span className="font-semibold">&quot;Implicit&quot;</span> or{" "}
-            <span className="font-semibold">&quot;Explicit&quot;</span>{" "}
-            transaction.
+          <p className="mt-11">
+            By inspecting the first node of the <span className="font-semibold"> Parse tree </span>,  PostgreSQL figures out whether the query should be treated as an <span className="underline underline-offset-2"> Implicit</span> or <span className="underline underline-offset-2"> Explicit </span>transaction.
           </p>
 
-          <ul className="mt-6 space-y-2">
-            <li>
-              ㆍ <span className="font-semibold">Implicit transaction</span> =
-              standalone queries like SELECT
-            </li>
-            <li>
-              ㆍ <span className="font-semibold">Explicit transaction</span> =
-              queries that starts with BEGIN/COMMIT
-            </li>
-          </ul>
+          <div className="mt-6 space-y-6">
+            <div className="space-y-3">
+              <div>
+                ㆍ <span className="font-semibold">Implicit transaction</span> =
+                 standalone queries like SELECT
+              </div>
+         
+              <div className="text-sm mt-2 pl-1">
+                <span className="px-2 rounded-md mr-1 -ml-1 bg-gray-200">Important</span>
+                  Even standalone query like SELECT * FROM users; is wrapped inside an implicit transaction to guarantee ACID compliance, even if the user doesn&apos;t explicitly say BEGIN and COMMIT
+                </div>
+            </div>
 
-          <p className="mt-6">
+            <div>
+              ㆍ <span className="font-semibold">Explicit transaction</span> =
+              multiple queries wrapped within BEGIN/COMMIT explicitly
+            </div>
+          </div>
+
+          <p className="mt-11">
             The transaction is handled in two primary ways only,{" "}
-            <span className="font-semibold">
-              implicit{" "}
-              <span className="font-normal text-xs px-2 bg-gray-200 rounded-md">
-                (autocommit)
+              <span className=" mx-1 px-2 bg-gray-200 rounded-md">
+                Autocommit
               </span>
-            </span>{" "}
-            and <span className="font-semibold">explicit</span> transaction.
+            and <span className="px-2 bg-gray-200 rounded-md mx-1">Explicit</span> transaction.
             PostgreSql by default operates in autocommit mode, meaing{" "}
-            <span className="font-semibold">
+            <span className="underline underline-offset-2">
               each individual statement is treated as a seprate transaction.
             </span>
           </p>
@@ -187,7 +178,7 @@ function Article() {
               StartTransactionCommand
             </span>{" "}
             function to initiate an active{" "}
-            <span className="px-2 bg-gray-200 font-semibold rounded-sm">
+            <span className="px-2 bg-gray-200 rounded-sm">
               Transaction Context
             </span>{" "}
             using (XID, snapshot, Locks)
@@ -203,8 +194,12 @@ function Article() {
         <div className="mt-7 text-base">
           <p className="mt-7">
             After parsing and transaction determination, further critical
-            processes take place inside a transaction context, but{" "}
-            <span className="font-semibold">why ?</span>
+            processes take place inside a transaction context, {" "}
+            <span className="font-semibold">but but but... what even is a transaction context?</span>
+          </p>
+
+          <p className="mt-4">
+           So, basically  <span className="mx-1 underline underline-offset-2"> transaction context is an active  environment</span>where PostgreSQL keeps track of locks, changes, and snapshots for a query, making sure everything can either be safely committed or completely rolled back incase something goes wrong
           </p>
 
           <div className="relative w-full mt-5 overflow-hidden">
@@ -221,15 +216,15 @@ function Article() {
               <span className="text-xs bg-gray-200 rounded-md font-normal px-1">
                 (1)
               </span>{" "}
-              Semantic analysis and rewriting.
+              Semantic analysis and rewriting: 
             </span>{" "}
             This phase actually ensures that the query is not only syntactically
             correct but also{" "}
-            <span className="font-semibold">
+            <span className="underline underline-offset-2">
               semantically valid and optimized{" "}
             </span>{" "}
             for executioin, and once the PostgreSql has completed the semantic
-            analysis and query rewriting phase, It proceeds to the
+            analysis and query rewriting phase, ...It proceeds to the
           </p>
 
           <p className="mt-4">
@@ -238,33 +233,21 @@ function Article() {
               <span className="text-xs bg-gray-200 rounded-md font-normal px-1">
                 (2)
               </span>{" "}
-              Planning and optimization
+              Planning and optimization :
             </span>{" "}
-            stage In this stage, the planner evaluates multiple strategies to
-            create <span className="font-semibold">plan tree</span> in the most
-            efficient way based on factors like:{" "}
-            <span className="underline underline-offset-2 text-sm">
-              Cost estimation
-            </span>
-            ,{" "}
-            <span className="underline underline-offset-2 text-sm whitespace-nowrap">
-              Index consideration
-            </span>
-            , and{" "}
-            <span className="underline underline-offset-2 text-sm">
-              Join strategies.
-            </span>
+             In this stage, the planner evaluates multiple strategies to
+          <span className="underline underline-offset-2 whitespace-nowrap mx-1">create plan tree</span> in the most
+            efficient way based on factors like: Cost estimation, Index consideration, and Join strategies ...now the
           </p>
 
           <p className="mt-4">
-            Now the{" "}
             <span className="font-semibold">
               <span className="text-xs bg-gray-200 rounded-md font-normal px-1">
                 (3)
               </span>{" "}
-              executor
-            </span>{" "}
-            walks in, and start traversing the plan tree, and execute each node
+              Executor
+            </span>
+            walks in, and start <span className="underline underline-offset-2 mx-1">traversing the plan tree, and execute each node</span> 
             (scans, joins, filters) as specified.
           </p>
 
@@ -298,7 +281,7 @@ function Article() {
       </ArticleSectionWithHeading>
 
       <ArticleSectionWithHeading
-        className="mt-24 pb-52"
+        className="mt-24"
         heading="Executor returning back the control to Transaction Manager"
         id="returning_the_control"
       >
@@ -349,6 +332,26 @@ function Article() {
             and the transaction manager terminates the transaction context,
             freeing allocated resources.
           </p>
+        </div>
+      </ArticleSectionWithHeading>
+
+
+      
+      <ArticleSectionWithHeading
+        className="mt-24 pb-52"
+        heading="Summary!"
+        id="summary"
+      >
+        <div className="mt-7 text-base">
+            <p className="mt-6">
+              <span className="font-semibold">&quot;Even if your query isn&apos;t a transaction, it is a transation&quot;</span> 
+              {" "} ,So we saw this behavior of PostgreSQL happening above, where every query, whether a simple <span  className="font-semibold mx-1">SELECT</span> or a multiple queries wrapped inside <span className="mx-1 font-semibold">BEGIN/COMMIT</span> runs inside a transation context to ensure ACID applies.
+            </p>
+
+            <p className="mt-6">
+              We also saw postgreSQL automatically wrapping standalone queries into implicit transactions and treating BEGIN/COMMIT blocks as explicit transactions, it tracks changes, locks, and snapshots during execution so that everything can be either safely committed or fully rolled back. This hidden transactional layer is what keeps your database consistent and reliable without you even realising it.
+            </p>
+
         </div>
       </ArticleSectionWithHeading>
     </ArticleWrapper>
