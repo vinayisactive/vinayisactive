@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export function NavAction({ text, type, href, icon }: NavbarProps) {
+export function NavAction({ text, type, href, icon, onClick }: NavbarProps) {
   const pathname = usePathname();
   const isActive = type=== "route" && pathname === `/${href}` || (pathname === "/" && href === "/")
   const hyperRef = type === "link" ? href : `/${href}`
@@ -14,6 +14,7 @@ export function NavAction({ text, type, href, icon }: NavbarProps) {
     <Link
       href={hyperRef}
       target={linkTarget}
+      onClick={onClick}
       className={`text-sm flex items-center gap-1 underline-offset-2 ${ 
         isActive 
             ? "underline text-black" 
@@ -29,32 +30,13 @@ function Navbar() {
   return (
     <nav className="w-full py-12 flex justify-between items-center">
       <div className="flex gap-4 items-center">
-        <NavAction 
-          text="home" 
-          type="route" 
-          href="/" 
-          />
-
-        <NavAction 
-          text="articles" 
-          type="route" 
-          href="articles" 
-          />
+        <NavAction text="home" type="route" href="/" />
+        <NavAction text="articles" type="route" href="articles" />
       </div>
 
       <div className="flex gap-4 items-center">
-        <NavAction
-          text="twitter"
-          type="link"
-          href="https://x.com/vinayisactive"
-        />
-
-        <NavAction
-          text="github"
-          type="link"
-          href="https://github.com/vinayisactive"
-          icon
-        />
+        <NavAction text="twitter" type="link" href="https://x.com/vinayisactive"/>
+        <NavAction text="github" type="link" href="https://github.com/vinayisactive" icon/>
       </div>
     </nav>
   );

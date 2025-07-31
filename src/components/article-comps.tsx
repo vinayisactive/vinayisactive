@@ -1,17 +1,74 @@
-import { ReactNode } from "react";
+"use client"
+import { ReactNode, useState } from "react";
 import WidthWrapper from "./width-wrapper";
 import { NavAction } from "./navbar";
+import {AnimatePresence, motion} from 'motion/react'
+import { useRouter } from "next/navigation";
 
 export function ArticleWrapper({ children }: { children: ReactNode }) {
+  const [showArticle, setShowArticle] = useState(true); 
+  const router = useRouter();
+
+  const handleAnimationAndNavigation = () => {
+      setShowArticle(false)
+
+      setTimeout(() => {
+      router.push("/articles"); 
+    }, 700);
+  }
+
   return (
     <main className="absolute inset-0 bg-white pb-20">
       <WidthWrapper className=" h-auto">
         <nav className="py-12 flex justify-between">
-          <NavAction text="back" href="articles" type="route" />
-          <NavAction text="x/@vinayisactive" href="https://x.com/vinayisactive" type="link" icon />
-        </nav> 
+        
+          <AnimatePresence>
+          {showArticle && <motion.button
+              initial={{ opacity: 0, translateX: -100, translateY: -100, scale: 0.95, filter: "blur(10px)" }}
+              animate={{ opacity: 1, translateX: 0, translateY: 0, scale: 1, filter: "blur(0px)" }}
+              exit={{
+                filter: "blur(10px)",
+                opacity: 0,
+                translateY: -300,
+                translateX: -100
+              }}
 
-        {children}
+              transition={{
+                duration: 1.05,
+                ease: "easeInOut"
+              }}
+            className="text-sm flex items-center gap-1 underline-offset-2 hover:underline text-gray-500 cursor-pointer" 
+            onClick={handleAnimationAndNavigation}>
+             back
+          </motion.button>}
+          </AnimatePresence>
+
+         {showArticle && <NavAction text="x/@vinayisactive" href="https://x.com/vinayisactive" type="link" icon />}
+        </nav> 
+      
+        <AnimatePresence>
+          { showArticle && (
+             <motion.div
+              initial={{ opacity: 0, translateX: -200, translateY: -350, scale: 0.95, filter: "blur(10px)" }}
+              animate={{ opacity: 1, translateX: 0, translateY: 0, scale: 1,  filter: "blur(0px)" }}
+              exit={{
+                opacity: 0,
+                translateY: -300,
+                translateX: -100,
+                filter: "blur(10px)"
+              }}
+
+              transition={{
+                duration: 1.02,
+                ease: "easeInOut"
+              }}
+             >
+                {children}
+            </motion.div>
+          )
+         } 
+        </AnimatePresence>
+       
       </WidthWrapper>
     </main>
   );

@@ -12,7 +12,7 @@ const ARTICLES: ArticleData[] = [
 
 export function ArticleLink({ date, title, desc, slug }: ArticleData) {
   return (
-    <div className="flex justify-start items-start gap-4">
+    <div className="flex justify-start items-start gap-4 py-8">
       <div className="text-sm text-gray-600 whitespace-nowrap pt-1">{date}</div>
       <div className="flex flex-col gap-0.5 items-start">
         <Link
