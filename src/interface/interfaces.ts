@@ -10,4 +10,5 @@ export interface ArticleData {
     type: "route" | "link";
     href: string;
     icon?: boolean;
+    onClick?: () => void
   }

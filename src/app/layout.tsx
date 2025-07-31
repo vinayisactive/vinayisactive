@@ -21,10 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manRope.className}`}>
+      <body className={`${manRope.className}`} >
         <WidthWrapper>
             <Navbar/>
-            {children}
+              {children}
         </WidthWrapper>
       </body>
     </html>
