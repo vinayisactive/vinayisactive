@@ -18,25 +18,27 @@ import {
 
 import { useCallback, useEffect, useState } from "react"
 import '@xyflow/react/dist/style.css'; 
-import { greenGraphBg, whiteDotBg } from "@/static/graph-bg"
-import { desktopNodes, mobileNodes, initialEdges as defaultEdges } from "@/components/nodes/home-nodes/home-nodes-config" 
+import { whiteDotBg } from "@/static/graph-bg"
+import { desktopNodes, mobileNodes, desktopEdges, mobileEdges } from "@/components/nodes/home-nodes/home-nodes-config" 
 
 function Flow({ nodeTypes }: { nodeTypes: NodeTypes }) {
 
   const { fitView } = useReactFlow();
   const [nodes, setNodes] = useState<Node[]>(desktopNodes)
-  const [edges, setEdges] = useState<Edge[]>(defaultEdges)
+  const [edges, setEdges] = useState<Edge[]>(desktopEdges)
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setNodes(mobileNodes);
+        setEdges(mobileEdges)
       } else {
         setNodes(desktopNodes);
+        setEdges(desktopEdges)
       }
       
       setTimeout(() => {
-        fitView({ duration: 800, padding: 0.1 });
+        fitView({ duration: 800, padding: 0.15 });
       }, 100);
     };
 

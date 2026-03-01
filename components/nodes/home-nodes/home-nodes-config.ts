@@ -68,41 +68,80 @@ export const mobileNodes: Node[] = [
   {
     id: "1",
     type: "introduction",
-    position: { x: -100, y: 0 },
+    position: { x: -225, y: -180 },
     data: nodeData.intro,
   },
   {
     id: "2",
     type: "experience",
-    position: { x: 200, y: 300 },
+    position: { x: -250, y: 350 },
     data: nodeData.exp1,
   },
   {
     id: "3",
     type: "experience",
-    position: { x: 190, y: 550 },
+    position: { x: -210, y: 600 },
     data: nodeData.exp2,
   },
   {
     id: "4",
     type: "project",
-    position: { x: -160, y: 400 },
+    position: { x: 120, y: 400 },
     data: nodeData.proj1,
   },
   {
     id: "5",
     type: "project",
-    position: { x: -120, y: 700 },
+    position: { x: 160, y: 690 },
     data: nodeData.proj2,
   },
 ];
 
-export const initialEdges: Edge[] = [
+export const desktopEdges: Edge[] = [
   {
     id: "e1-2",
     source: "1",
     target: "2",
     sourceHandle: "experience",
+    type: "smoothstep",
+    animated: true,
+    style: {
+      stroke: "#000",
+      strokeWidth: 2,
+      strokeDasharray: "5,5",
+    },
+  },
+  {
+    id: "e2-3",
+    source: "2",
+    target: "3",
+    type: "default",
+    style: { stroke: "#000", strokeWidth: 2 },
+  },
+  {
+    id: "e1-4",
+    source: "1",
+    target: "4",
+    sourceHandle: "projects",
+    type: "smoothstep",
+    style: { stroke: "#000", strokeWidth: 2 },
+  },
+  {
+    id: "e1-5",
+    source: "1",
+    target: "5",
+    sourceHandle: "projects",
+    type: "smoothstep",
+    style: { stroke: "#000", strokeWidth: 2 },
+  },
+];
+
+export const mobileEdges: Edge[] = [
+  {
+    id: "e1-2",
+    source: "1",
+    target: "2",
+    sourceHandle: "experience-mobile",
     type: "smoothstep",
     animated: true,
     style: {
