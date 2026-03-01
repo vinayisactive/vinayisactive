@@ -74,7 +74,7 @@ function IntroductionNode() {
 
       <Handle id="experience" type="source" position={Position.Left} className="bg-transparent! w-4! h-4! border-[3px]! border-white!"/>
       <Handle id="projects" type="source" position={Position.Right} className="bg-transparent! w-4! h-4! border-[3px]! border-white!"/>
-      <Handle type="source" position={Position.Bottom} className="bg-transparent! w-4! h-4! border-[3px]! border-white!"/>
+      <Handle id="experience-mobile" type="source" position={Position.Bottom} className="bg-transparent! w-4! h-4! border-[3px]! border-white!"/>
       </div>
     </div>
   )
