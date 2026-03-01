@@ -13,11 +13,12 @@ import {
     ReactFlowProvider,
     useReactFlow,
     NodeTypes,
+    Controls,
 } from "@xyflow/react"
 
 import { useCallback, useEffect, useState } from "react"
 import '@xyflow/react/dist/style.css'; 
-import { greenGraphBg } from "@/static/graph-bg"
+import { greenGraphBg, whiteDotBg } from "@/static/graph-bg"
 import { desktopNodes, mobileNodes, initialEdges as defaultEdges } from "@/components/nodes/home-nodes/home-nodes-config" 
 
 function Flow({ nodeTypes }: { nodeTypes: NodeTypes }) {
@@ -35,7 +36,7 @@ function Flow({ nodeTypes }: { nodeTypes: NodeTypes }) {
       }
       
       setTimeout(() => {
-        fitView({ duration: 800, padding: 0.2 });
+        fitView({ duration: 800, padding: 0.1 });
       }, 100);
     };
 
@@ -80,9 +81,11 @@ function Flow({ nodeTypes }: { nodeTypes: NodeTypes }) {
           padding: 0.2,
           duration: 800, 
         }}
-        style={{ backgroundImage: greenGraphBg }}
+        style={{ backgroundImage: whiteDotBg }}
         proOptions={{ hideAttribution: true }}
-      />
+      >
+        <Controls className="bg-white! border-2! border-black! shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]! rounded-none! text-black!" />
+      </ReactFlow>
   )
 }
 

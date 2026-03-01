@@ -5,7 +5,7 @@ import ReactFlowCanvas from "@/components/react-flow-canvas/react-flow-canvas"
 
 export default function Home() {
   return (
-    <main className="w-screen h-screen border">
+    <main className="w-screen h-screen">
      <ReactFlowCanvas nodeTypes={nodeTypes} />
     </main>
   )
