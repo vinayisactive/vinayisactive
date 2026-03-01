@@ -68,13 +68,13 @@ export const mobileNodes: Node[] = [
   {
     id: "1",
     type: "introduction",
-    position: { x: -225, y: -180 },
+    position: { x: -225, y: -100 },
     data: nodeData.intro,
   },
   {
     id: "2",
     type: "experience",
-    position: { x: -250, y: 350 },
+    position: { x: -250, y: 380 },
     data: nodeData.exp1,
   },
   {
